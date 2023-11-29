@@ -1,0 +1,17 @@
+name: C++ Static Analysis
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install cppcheck
+      run: sudo apt-get install cppcheck
+
+    - name: Run cppcheck
+      run: cppcheck --enable=all --std=c++98 --verbose --error-exitcode=1 ./src ./include
+
