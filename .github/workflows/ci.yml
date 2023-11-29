@@ -18,7 +18,7 @@ jobs:
         cd build
         cmake ..
         make
-        ./example_test  # あなたのテストバイナリの名前
+        ./example_test
 
     - name: Generate coverage data
       run: |
@@ -26,8 +26,8 @@ jobs:
         lcov --remove coverage.info '/usr/*' "${{ github.workspace }}/*googletest-src/*" --output-file coverage.info
         lcov --list coverage.info
 
-    - name: Upload coverage to GitHub PR
-    - uses: actions/upload-artifact@v2
-    with:
-      name: lcov-report
-      path: coverage.info
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        file: ./build/coverage.info
+        fail_ci_if_error: true
