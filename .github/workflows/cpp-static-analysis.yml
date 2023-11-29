@@ -13,4 +13,4 @@ jobs:
       run: sudo apt-get install cppcheck
 
     - name: Run cppcheck
-      run: cppcheck --enable=all --verbose --error-exitcode=1 src include
+      run: cppcheck --enable=all --verbose --error-exitcode=1 -I include src
