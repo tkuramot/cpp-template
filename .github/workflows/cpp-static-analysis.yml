@@ -3,7 +3,7 @@ name: C++ Static Analysis
 on: [push, pull_request]
 
 jobs:
-  build:
+  analysis:
     runs-on: ubuntu-latest
 
     steps:
