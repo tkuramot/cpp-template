@@ -29,13 +29,3 @@ target_include_directories(${PROGRAM}
         PRIVATE
         ${PROJECT_SOURCE_DIR}/include
 )
-target_compile_options(${PROGRAM}
-        PRIVATE
-        -fprofile-arcs
-        -ftest-coverage
-)
-target_link_options(${PROGRAM}
-        PRIVATE
-        -fprofile-arcs
-        -ftest-coverage
-)
