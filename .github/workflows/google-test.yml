@@ -1,6 +1,6 @@
 name: Google Test
 
-on: [push, pull_request]
+on: push
 
 jobs:
   gtest:
